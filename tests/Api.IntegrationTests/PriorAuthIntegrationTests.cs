@@ -2,21 +2,12 @@ using Api.Models;
 using System.Net;
 using System.Net.Http.Json;
 using Microsoft.AspNetCore.Mvc.Testing;
-using Xunit;
-using System.Net.Http;
-using System;
-using System.Threading.Tasks;
 
 
 namespace Api.IntegrationTests;
-public class PriorAuthEndpointTests : IClassFixture<WebApplicationFactory<Program>>
+public class PriorAuthEndpointTests(WebApplicationFactory<Program> factory) : IClassFixture<WebApplicationFactory<Program>>
 {
-    private readonly HttpClient _client;
-
-    public PriorAuthEndpointTests(WebApplicationFactory<Program> factory)
-    {
-        _client = factory.CreateClient();
-    }
+    private readonly HttpClient _client = factory.CreateClient();
 
     [Fact]
     public async Task ValidRequest_ReturnsCreated()
