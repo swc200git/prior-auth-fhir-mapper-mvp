@@ -6,7 +6,7 @@ public record PriorAuthRequest(
     string ProviderNpi,
     string ServiceCode,
     string DiagnosisCode,
-    DateOnly ServiceDate,
+    DateTime ServiceDate,
     string PlaceOfService,
     string Priority
 );

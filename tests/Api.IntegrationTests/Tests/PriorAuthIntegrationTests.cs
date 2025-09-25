@@ -1,12 +1,12 @@
 using Api.Models;
-using Api.IntegrationTests.Models;
+using Api.IntegrationTests.TestInfrastructure;
+using Api.IntegrationTests.TestModels;
 using System.Net;
 using System.Net.Http.Json;
-using Microsoft.AspNetCore.Mvc.Testing;
 
 
-namespace Api.IntegrationTests;
-public class PriorAuthEndpointTests(WebApplicationFactory<Program> factory) : IClassFixture<WebApplicationFactory<Program>>
+namespace Api.IntegrationTests.Tests;
+public class PriorAuthEndpointTests(CustomWebApplicationFactory factory) : IClassFixture<CustomWebApplicationFactory>
 {
     private readonly HttpClient _client = factory.CreateClient();
 
@@ -19,7 +19,7 @@ public class PriorAuthEndpointTests(WebApplicationFactory<Program> factory) : IC
             ProviderNpi: "1234567890",
             ServiceCode: "S1234",
             DiagnosisCode: "Z01.1",
-            ServiceDate: DateOnly.Parse("2025-09-24"),
+            ServiceDate: DateTime.Parse("2025-09-24"),
             PlaceOfService: "11",
             Priority: "normal"
         );
@@ -42,7 +42,7 @@ public class PriorAuthEndpointTests(WebApplicationFactory<Program> factory) : IC
             ProviderNpi: "",
             ServiceCode: "",
             DiagnosisCode: "",
-            ServiceDate: DateOnly.Parse("2025-09-24"),
+            ServiceDate: DateTime.Parse("2025-09-24"),
             PlaceOfService: "",
             Priority: ""
         );

@@ -421,4 +421,7 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+
+# custom local ignore
 .github/copilot-instructions.md
+repo_snapshot.txt

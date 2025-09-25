@@ -1,4 +1,4 @@
-namespace Api.IntegrationTests.Models;
+namespace Api.IntegrationTests.TestModels;
 public class CreatedResponse
 {
     public Guid Id { get; set; }
