@@ -1,4 +1,5 @@
 using Api.Models;
+using Api.IntegrationTests.Models;
 using System.Net;
 using System.Net.Http.Json;
 using Microsoft.AspNetCore.Mvc.Testing;
